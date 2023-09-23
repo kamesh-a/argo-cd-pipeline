@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nina-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: nina-app
+    spec:
+      containers:
+      - name: nina-app
+        image: nanajanashia/argocd-app:1.2
+        ports:
+        - containerPort: 8080
